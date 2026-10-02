@@ -1,0 +1,62 @@
+Tipos de imagenes según dispositivo de captura
+imagenes formadas por:
+    La luz visible: Captadas por una camara fotográfica, de video o de TV
+    Rayos ultravioleta: fotoluminiscencia
+    Rayos infrarrojos: permiten la visión nocturna
+    Sensores de rango: generan una imagen a partir de la distancia
+    Campos magnéticos
+
+    Sonidos
+        Ecografía
+        ultrasonido
+        Ecocardiogramas
+        Radiografía
+        Radioscopía
+        Tomografía
+        Angiografía
+
+    Pulsos eléctricos
+        Electrocardiograma
+        Electroencefalograma
+
+Tipos de resoluciones en una imágen digital
+
+    Resolucion espacial(muestreo): número de puntos de la imagen discreta.
+
+    Resolucion espectral: numero de bandas de la imagen discreta.
+        Imagen monocromatica: 1 bandas
+        Imagen en color: 3 bandas
+        Imagen multriespectral: n bandas
+
+    Resolución radiométrica (cuantización): número de valores o niveles diferentes que puede tomar en cada banda. 
+
+Concepto de convolución digital
+
+. Definición (Máscara digital)
+. Tambien denominada ventana, filtro o plantilla
+. Caracteristicas
+    * Matriz que representa una imagen digital de tamaño reducido y rectangular (generalmente, cuadrada).
+    * Coeficientes: valores de los puntos que la Máscara
+    * Dimensión: producto del número de filas por el de columnas
+
+Histograma en escala de grises
+
+Definición (Histograma de los niveles de gris)
+    * Abscisas: Posibles niveles de gris de la imagen.
+    * Ordenadas: Número de puntos que tienen un determinado nivel de gris (frecuencia absoluta).
+
+Operaciones sobre puntos en imagen 
+
+Ejemplo (Operacion puntual)
+
+Conversion de una imagen de entrada f(x,y) en otra g(x,y):
+        g(x,y) = F[f(x,y)]
+    donde F es la función de transformación
+
+Color en la imágen 
+    Definición (Luz)
+    "Energía radiante" que provoca la sensación de la visión al incidir en la retina y estimular los nervios ópticos
+    
+    Definición (Color)
+    La percepción humana del "Color" está producida por la variación de la luz en campo electromagnético.
+

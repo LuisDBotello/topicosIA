@@ -1,0 +1,50 @@
+BONUS 
+Resolver el problema 8 Reynas con el algoritmo de búsqueda Tabu
+    Descripción del problema
+    Representación de P y S
+    Propuesta de algoritmo en pseudocódigo o diagrama de flujo
+    Implementación en Python
+    Agregar a la Implementación métricas de tiempo y cantidad de movimientos
+
+    Reglas
+        Se probará con un estado aleatorio
+        Se someterá a un ejercicio de rendimiento en clase
+
+Qué es el recocido
+
+En metalurgia y materiales, es un tratamiento térmico que altera las propiedades físicas y en algunos casos las químicas de un materiales
+aumentando su ductilidad y reduciendo su dureza.
+Consiste en aumentar la temperatura, mantener la temperatura adecuada y posteriormente enfriar lentamente.
+Durante el recocido, los átomos migran a través de la retícula cristalina y el numero de dislocaciones decrece, reduciendo las tensiones del material.
+Esto conlleva el cambio de ductilidad y el ablandamiento.
+En muchos casos, el proceso se realiza calientando el material.
+
+temperatura en función del tiempo
+t1.- warming up : crece la temperatura rápido
+t2.- holding time : mantiene la temperatura por un tiempo
+t3.- cooling time : decrece la temperatura lentamente
+t4.- additional time : acomodo del metal
+
+Es un algoritmo basado a través de trayectorias que utiliza la metáfora termodinámica como mecanismo de decisión en la aceptación de soluciones.
+
+Utiliza un mecanismo para evitar quedar atrapado en óptimos locales, lo que ocurre con frecuencia en las búsquedas locales.
+El proceso trata de escapar de soluciones óptimas locales, se debe llevar a cabo de forma controlada.
+En el caso del algoritmo de recocido simulado, el proceso se controla mediante el parámetro temperatura: el algoritmo interpreta el enfriamiente
+lento como un lento descenso en la probabilidad de aceptar peores soluciones a medida que se explora el espacio de soluciones.
+
+Controlar la temperatura a nivel de código con un parámetro
+
+FUNDAMENTOS
+
+Algoritmo que permite bajo ciertas condiciones la degradación de la solucion actual.
+El objetivo es el escape de óptimos locales y retrasar la convergencia.
+Es un algoritmo sin memoria ( es decir no utiliza la informacion recogida a lo largo de la búsqueda ).
+
+TAREA: IMPLEMENTACION DE TABÚ CON MEMORIA A LARGO PLAZO. EN PAREJAS
+
+En 1953, Metropolis y otros autores introdujeron un modelo simple para simular la evolucion
+
+SISTEMA FISICO              PROBLEMA DE OPTIMIZACION
+Estado del SISTEMA          solucion
+Posicion molecular          Variables de decision
+Energía                     Funcion objetivo

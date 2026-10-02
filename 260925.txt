@@ -1,0 +1,36 @@
+Qué es la heurística?
+
+    En inteligencia artificial es un conjunto de técnicas y métodos que ayudan a resolver problemas, tomar 
+    decisiones y descubrir conocimientos.
+    * Son reglas prácticas que simulan el pensamiento humano.
+
+Las metaheurístas son estrategias inteligentes para diseñar o mejorar procedimientos heurísticos muy generales
+con un alto rendimiento. 
+
+Las metaheurístas de búsqueda guían los procedimientos que usan transformaciones o movimientos para recorrer 
+el espacio de soluciones o bien es una estrategia que guía la busqueda de soluciones a problemas de optimización.
+
+Tipos de metaheurístas
+    Búsqueda tabú
+    Búsqueda por entornos
+    Búsqueda parcial
+    Búsqueda por entornos aleatoria
+    metaheurístas evolutivas
+
+N Reinas
+
+Bonus
+Problema de programación de trabajos (JSSP)
+Problema de las N Reynas
+Árbol de expansión mínima (MST)
+Problema del agente viajero (TSP)
+    Descripción detallada del problema
+    Representación
+
+Búsqueda tabú con memoria a corto plazo para resolver un problema del agente viajero
+    
+    Generar x solución inicial
+    x*=x solucion mejor
+    Generar N(x)
+    Elige x' de la solucion y no esté en la lista tabú
+    

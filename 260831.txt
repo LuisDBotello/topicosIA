@@ -1,0 +1,158 @@
+Prompt
+	Es una instrucción dada a un sistema de IA para indicar la tarea que debe realizar.
+	Diseñar cuidadosamente los prompts es esencial para obtener resultados precisos de los LLMs, de manera similar a los detalles en un restaurante.
+
+Copilotos
+	Son asistentes personales digitales que colaboran en diversas aplicaciones, desde la escritura hasta la codificación.
+
+CONCEPTOS FUNDAMENTALES DE LA IA
+--------------------------------
+
+Clasificación
+	Técnica que se utiliza para asignar una etiqueta o categoría a un objeto o dato en función de sus características. Se trata de separar los datos en diferentes 		clases o grupos predefinidos.
+
+Agrupamiento
+	Clustering, es una técnica utilizada para dividir datos en grupos o clusteres basados en similitudes entre ellos. A diferencia de la clasificación, el 			agrupamiento no tiene etiquetas predefinidas; en cambio, el algoritmo agrupa los datos en función de la similitud de sus carácteristicas.
+
+Regresión
+	Se utiliza para predecir o estimar valores numéricos basados en datos previos. Se trata de encontrar una relación matemática entre una variable 	independiente...
+
+CONCEPTOS AVANZADOS DE LA IA
+----------------------------
+	
+Detección de anomalías
+	Proceso de identificar y señalar comportamientos inusuales o anómalos dentro de un sistema de inteligencia artificial, sin necesidad de disponer de un gran 	conocimiento de aprendizaje automático.
+	Es fundamental poder detectar y abordar situaciones anormales que puedan surgir analizando diferentes...
+
+Generación de adversarios
+
+Redes generativas adversarias (GAN)
+	Se utilizan para generar datos nuevos pero que tiene la peculiaridad que estos nuevos datos generados, son similares a los datos usados para el entrenamiento 		de su modelo.
+	Se compone principalmente de 2 elementos funcionales
+	El generador: Es el responsable de producir nuevos datos.
+	El discriminador: Es el responsable de distingir entre datos reales y datos generados.
+
+Ética
+	Se refiere a la consideración de principios morales y valores humanos en el diseño, desarrollo.
+
+REDES NEURONALES
+	Un modelo de entrenamiento en una red neuronal artificial, que se basa a grandes rasgos en el cerebro humano.
+	Es un sistema de neuronas artificiales que son nodos de procesamiento.
+
+	Prealimentadas(FF): son una de las formas más antiguas de redes neuronales, ya que los datos fluyen en una direccion a traves de las capas de neuronas
+	Recurrentes(RNN): Suelen usar datos de series temporales o datos que involucran secuencias. Reconocimiento de voz, PLN
+	
+	Memoria a largo plazo(LSTM): Es una forma avanzada de RNN que puede usar memoria para recordar los que sucedio en capas anteriores.
+	Convolucionales(CNN): Incluyen algunas de las redes neuronales más comunes en la IA moderna. Reconocimiento de imagen y emplean varias capas distintas que 	filtran diferentes partes de una imagen antes de volver a unirla.
+	Generativas adversarias(GAN): Se usan dos redes neuronales que compiten entre si en un juego que, en ultima instancia, mejora la exactitud
+
+LOGICA DIFUSA:
+	Es una lógica que permite llegar a conclusiones "razonadas" a partir de informacion ambigüa o imprecisa.
+
+CONJUNTOS DIFUSOS
+	se puede definir como A = {X, miusubaA(X)|XperteneceU}
+
+Como representar aproximacion semántica
+	La lógica difusa se adapta mejor al mundo real.
+Valores duros(crisp)
+	La raíz de la teoría de la lógica difusa recae en las variables linguisticas, por ejemplo "Luis es alto"
+Maquina de inferencia
+	En un sistema difuso, se define como el proceso de mapear una entrada a una salida, utilizando la teoría de conjuntos difusos.
+
+La más utilizada es el método de Mandani, existe otro método como el Sugeno.
+* Fusificar las entradas: Convierte la entrada nitida a unvalor difuso
+* Evaluación de reglas: Conjunto de acciones a realizar en funcion del estado
+* Agregacion de las reglas de entrada
+* Defusificacion: indica que la entrada para el proceso de defusificación es el conjunto de salida agregado, la salida es un valor numérico. Tecnica centroide, Centro de gravedad.
+
+La fusificacion tiene como objetivo convertir valores crisp o valores reales en valores difusos.
+La inferencia relaciona los conjuntos difusos 
+La defusificacion realiza el proceso de adecuar los valores difusos generados.
+
+Aplicaciones: Ejemplos de sistemas de control y productos comerciales.
+	Control de un horno de cemento.
+	Estabilización de imágenes en cámaras de video.
+	Conducción automática de trenes metropolitanos.
+	Control de aire acondicionado.
+
+Industrias
+	Medicina y bioinformática (Torres & Nieto, 2006)
+	Aplicaciones industriales
+	Robots autónomos (Peri & Simon, 2005)
+	Controladores de motores de induccion ()
+
+-----------------------
+ Computación evolutiva
+-----------------------
+
+Actualmente se conocen varios metodos de cálculo evolutivo.
+El GA de Holland puede representarse como una secuencia de pasos para pasasr de una población de cromosomas artificiales a otra nueva.
+Utiliza la selección natural y técnicas inspiradas en la genética conocidas como cruce y mutación.
+
+El AG utiliza una medida de la aptitud de los cromosomas individuales para llevar a cabo la reproducción
+
+Paso 1: Representar el dominio variable del problema como un cromosoma de longitud fija, elegir el tamaño de la población de cromosomas N, la probabilidad de cruce pc y la probabilidad de mutación pm.
+
+Paso 2: Definir una función de aptitud para medir el rendimiento, o aptitud, de un cromosoma individual en el dominio del problema.
+La función de aptitud establece la base para seleccionar los cromosomas que se aparearan durante la reproducción.
+
+Paso 3: Generar aleatoriamente la población inicial de cromosomas de tamaño N:
+	x1, x2, ... , xN
+
+Paso 4: Calcular la aptitud de cada cromosoma individual:
+	f(x1), f(x2), ... , f(xN)
+
+Paso 5: Selección de un par de cromosomas de la población actual para el apareamiento Los cromosomas parentales se seleccionaran con una probabilidad 	relacionada con su aptitud. Los cromosomas màs aptos tienen más probabilidades de ser seleccionados para el apareamiento que los cromosomas 	menos aptos.
+
+Paso 6: Crear un par de cromosomas descendientes aplicando los operadores genéticos: cruce y mutación.
+
+Paso 7: Colocar los cromosomas descendientes creados en la nueva población.
+
+Paso 8: Repetir el Paso 5 hasta que el tamaño de la nueva población.
+
+Paso 9: Sustituir la población inicial de cromosomas(padres) por la nueva población(hijos).
+
+Paso 10: Volver a la etapa 4 y repetir el proceso hasta que se cumpla el criterio de terminación.
+
+Un AG representa un proceso iterativo.
+El número tipico de generaciones de un AG sencillo puede oscilar entre 50 y más de 500 (Mitchell, 1996).
+
+-----------------------------------------------------------------------------------------------------------
+f(x) = 15x - x^2
+
+------------------------------------------------------------
+	vision artificial
+------------------------------------------------------------
+
+Ciencia que estudia los fundamentos teóricos, algoritmos y aplicaciones para comprender el significado de una escena a paritr del analisis de una o varias imagenes.
+La visión por computadora es un campo que incluye mètodos para la adquisicion, procesamiento, analisis y entendimiento de imágenes.
+
+Aplicaciones
+	Medicina: Deteccion de enfermedades.
+	Industria: Control de procesos, clasificacion, inspeccion.
+	Robótica: Guiado de vehículos.
+	Deteccion y seguimiento: personas, vehículos, etc.
+	Recuperación de imágenes de bases de datos.
+	Reconocimiento de acciones humanas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

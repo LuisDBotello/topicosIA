@@ -1,0 +1,59 @@
+Objetivos de la visión artificial
+    Detección, segmentación, localización, reconocimiento de ciertos objetos en imágenes
+    La evaluación de los resultados
+    Registro de diferentes imágenes de una misma escena u objeto, es decir, hacer concordar un 
+        mismo objeto en diversas imágenes.
+    Mapeo de una escena para generar un modelo tridimensional de la escena; este modelo podría 
+        ser usado por un robot para navegar por la escena.
+    Estimación de las posturas tridimensionales de humanos.
+    Búsqueda de imágenes digitales por su contenido.
+
+Pre procesamiento
+    Antes de que un método de visión por computadora pueda ser aplicado a los datos de imagen con el fin 
+    de extraer alguna pieza específica de información, es necesario procesar los datos con el fin de asegurar
+    que satisface ciertas suposiciones implícitas en el método.
+
+    Ejemplos
+        Re-sampling con el fin de asegurar que el sistema de coordenadas de la imagen es correcta.
+        La reducción de ruido con el fin de asegurar que el ruido del sensor no introduzca información falsa.
+        El realce de contraste para asegurar que la información pertinente pueda ser detectada.
+        Representación escala-espacio para mejorar las estructuras de imágenes a escalas adecuadas.
+
+DESAFÍOS ÉTICOS EN LA APLICACIÓN DE LA IA 
+
+    Falta de transparencia en los algoritmos: Opacidad de los algoritmos utilizados en los sistemas de 
+        inteligencia artificial. Puede generar desconfianza y preocupación, ya que los afectados no saben 
+        qué información se utiliza para tomar decisiones que puedan afectar sus vidas.
+
+    Sesgos ocultos y decisiones injustas: Falta de transparencia en los algoritmos también puede conducir a 
+        sesgos ocultos y decisiones injuestas. Si los datos utilizados para entrenar a la IA están sesgados o 
+        contienen prejuicios, el sistema puede perpetuar estas desigualdades al tomar decisiones.
+
+    Responsabilidad y toma de decisiones autónomas: ¿Quién es responsable si una decisión de la IA tiene consecuencias
+        negativas?, ¿Los desarrolladores, los usuarios o la propia máquina? La falta de claridad en la atribución
+        de responsabilidad plantea dilemas éticos y legales quue deber ser abordados.
+    
+    Privacidad y protección de datos: La IA se basa en el análisis de grandes cantidades de datos, lo que puede plantear
+        problemas éticos en términos de privacidad y protección de datos. Si los datos utilizados para entrenar a los
+        algoritmos son datos sensibles y no se manejan adecuandamente, esto podría violar la privacidad de las personas
+        y generar preocupaciones éticas relacionadas con la manipulación de la información personal.
+
+FUTURO DE LA IA EN LA TOMA DE DECISIONES 
+
+    Mayor autonomía de la IA: Con los avances en la tecnología, es probable que la IA adquiera mayor autonomía y 
+        capacidad de toma de decisiones. Esto podría conducir a situaciones donde las máquinas tomen decisiones
+        de manera independieneete y sin intervención humana directa. Esta autonomía plantea cuestiones éticas sobre
+        la responsabilidad y el control humano sobre las...
+
+    Dilema de la moralidad de la IA: Se han planteado debates sobre si es posible o deseable programar sistemas de IA
+        para que adopten comportamientos éticos o morales. ¿Es apropiado delegar a las máquinas la definición de lo que
+        es correcto o incorrecto en situaciones complejas? ¿Cómo podemos garantizar que los valores humanos se reflejen
+        en las decisiones de la IA?
+
+    Dependencia de la IA en la toma de decisiones: A medida que la IA se integra más en nuestra sociedad, existe el 
+        riesgo de que nos volvamos excesivamente dependientes de ella para tomar decisiones importantes. ¿Podría esto
+        debilitar nuestras habilidades de toma de decisiones éticas como seres humanos? ¿Qué implicaciones tendría
+        para nuestra autonomía y responsabilidad individual?
+
+    
+    
