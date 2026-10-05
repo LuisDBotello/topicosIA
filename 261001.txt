@@ -48,3 +48,115 @@ SISTEMA FISICO              PROBLEMA DE OPTIMIZACION
 Estado del SISTEMA          solucion
 Posicion molecular          Variables de decision
 Energía                     Funcion objetivo
+Estado fundamental          Solucion óptima global
+Estado metaestable          Solucion local
+
+METAFORA DE SIMULACION
+
+Cada configuracion de una solucion en el espacio de búsqueda representa una energía interna diferente del sistema
+Calentar el sistema implica relajar el criterio de aceptación de las muestras obtenidas en la búsqueda por el espacio de soluciones
+A medida que el sistema se enfría
+
+Algoritmo básico
+
+Si la solucion vecina candidata es peor, entonces se selecciona una probabilidad dada
+Se utiliza un parámetro de control, llamado temperatura(T), para determinar la probabilidad de aceptar soluciones peores
+En cada nivel de temperatura, se explora un numero grande de intentos L(T)
+Una vez que se alcanza un estado de equilibrio, gradualmente se baja la temperatura
+
+Se debe partir de una solucion inicial, el algoritmo se ejecuta en varias iteraciones.
+En cada iteracion se genera un vecino aleatorio
+
+Epsilon = delta = diferencia entre una solucion y otra . 
+delta bajo = P(aceptacion) sube. 
+delta alto y alta T = P(a) = 0.40 
+
+input( temperaturaInicial, funcionDeDescensoDeTemperatura, l(Tiempo en la temperatura), temperaturaFinal)
+T = temperaturaInicial
+solucionActual = generarSolucionInicial() //ruta random ó mejor un módulo 
+
+while T >= temperaturaFinal hacer
+    for count 1 a L(T) hacer
+        solucionCandidata = GenerarVecinoAleatorio(solucionActual)
+        delta = Costo(SolucionCandidata) - Costo(solucionActual)
+        if (delta < 0 OR random(0,1) < e^(-delta/T)) 
+            solucionActual = solucionCandidata
+    T = l(T)
+
+Estructura de Implementación
+    Representación
+        * Codificación permutaciones
+            *Ejemplo problema del agente viajero
+            *(7 6 3 1 5 4 2 8)
+        * Codificación binaria
+            *Problema de la mochila
+            *(0100 1110)
+        * Codificación realce
+            *Problema de optimización con parámetros reales
+            *(2.7 3.5)
+    
+    Solución inicial
+        *Aleatoria
+        *Solucion previa
+        *Solucion obtenida con otras heurísticas
+        *Inventada
+
+    Mecanismo de transicion de solucion
+        1 Generación de una nueva solucion
+            1 Definición de la vecindad (Cual conjunto)
+            2 Selección de un elemento del conjunto vecino
+        2 Calculo de la diferencia en la función objetivo entre la solucion actual y la candidata ( del vecindario )
+        3 Criterio de aceptación
+
+    Secuencia de enfriamiento
+
+    temperatura Inicial
+        Si la temperatura inicial es muy alta, la búsqueda ( al inicio ) será similar a un búsqueda aleatoria.
+        Por otro lado si la temperatura inicial es baja, la búsqueda se parecera a una búsqueda local del primer vecino.
+        Por lo tanto es necesario equilibrar entre ambos procedimientos extremos.
+
+    Mecanismo de aceptacion
+        Estrategias básicas habituales
+            Aceptar todas 
+            Porcentaje de la solución inicial
+            Técnicas avanzadas
+                Acceptance deviation
+                Acceptance ratio
+                Ben-Ameur method
+
+    Estado de equilibrio
+        *Para alcanzar el estado de equilibrio a cada temperatura, se debe aplicar un número de transiciones suficientes
+        *La toería sugiere que el numero de iteraciones L(T) a cada temperatura debería ser exponencial al tamaño del problema,
+        lo cual en la practica dificulta la estrategia
+        *El numero de iteraciones debería ser acorde al tamaño del problema y particularmente proporcional al tamaño del vecindario
+            Estatico: El numero de vecinos generados de una solucion s es y. N(S) Cuanto mayor sea y, mayor será el costo computacional
+            pero mejores resultados.
+            Adaptativo(Tema complejo)
+        Un metodo adaptativo simple consiste en reducir la temperatura cuando una de las siguientes situaciones ocurran:
+            * El algoritmo alcanza un numero máximo de vecinos (max_vecinos)
+            * El algoritmo acepta un numero de soluciones candidatas máximo (max_successed)
+            * Tipicamente max_successed = 0.1 * max_vecinos
+
+    Secuencia de enfriamiento
+        Existe un compromiso entre la calidad de la solución obtenida y la velocidad de la secuencia de enfriamiento.
+        Si la temperatura se reduce lentamente, las soluciones obtenidas son generalmente mejores pero obtenerlas conlleva a un mayor
+        tiempo de procesamiento computacional.
+        Secuencia ad hoc determinada por el diseñador.
+        Secuencia lineal (i denota iteracion)
+            T = T - beta        Ti = T0 - i * beta
+        Geométrica o exponencial. La funcion más popular de enfriamiento considera un alfa entre [0.8, 0.99]
+            T = alfa*T
+        Secuencia logarítmica de Boltzman
+            Extremadamente lenta pero existe una prueba de convergencia al óptimo global
+                T(t) >= T0 / ln(1 + t), t = 1, 2, ...
+        Hacia máximo
+        300 mejora de 100% = 600
+        300 mejora de 50% = 450
+        300 mejora del 0% = 300
+        300 mejora de
+        Hacia mínimo
+        300 mejora de 100% = 150
+        300 mejora de 50% = 
+        300 mejora del 0% = 300
+        300 mejora de
+
