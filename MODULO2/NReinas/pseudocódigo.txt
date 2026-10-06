@@ -1,0 +1,76 @@
+tablero = MatrizNxN(n)
+
+tablero.acomodarReinas()
+
+tabu = hash(combinacion, vistaMatriz)
+soluciones = hash(combinacion, vistaMatriz)
+
+tiempoInicial = millis()
+mientras(True){
+
+    si ( tabu.contiene( tablero.combinacion ) )
+        continuar
+
+    tablero.contarColisiones()
+
+    si ( tablero.colisiones es 0)  //nueva solucion
+        soluciones.poner( combinacion, tablero.vistaMatriz )
+    
+    tabu.poner( combinacion, tablero.vistaMatriz )
+
+    si ( iteraciones == limite)
+        salir
+    
+    tablero.acomodarReinas()
+
+}
+tiempoTotal = millis() - tiempoInicial
+
+
+
+clase Tablero{
+
+    reinas //array de Reinas
+    colisiones
+    combinacion //clave unica para acomodo de reinas
+
+    funcion acomodarReinas(){
+        para i en N
+            j = randomEntre(0, N-1) //Elegir columna random para cada fila
+            tablero[i][j] = 1
+            reina[i].setPosicion(i, j)
+    }
+
+    funcion contarColisiones(){
+        colisiones = 0
+        para i, j en reinas
+            si ( hayColision( reinas[i].posicion, reinas[j].posicion ))
+                colisiones += 1
+        retornar colisiones
+    }
+
+    funcion getCombinacion(){ 
+        combinacion = ""
+        para reina en reinas
+            combinacion = combinacion.concatenar(reina.posicion[0]).concatenar(reina.posicion[1])  
+    }
+
+    funcion privada hayColision(pos1, pos2){
+        
+        if pos1[0] == pos2[0] or pos1[1] == pos2[1]: #columna o fila son iguales
+            return True
+        
+        if absoluto(pos1[0] - pos2[0]) == absoluto(pos1[1] - pos2[1]): #colision en diagonal \
+            return True
+
+        if absoluto(pos1[0] - pos2[0]) == absoluto(pos2[1] - pos1[1]): #colision en diagonal /
+            return True
+                
+        return False
+    }
+}
+
+clase Reina {
+    posicion //Arreglo de dos numeros
+    numero
+}
