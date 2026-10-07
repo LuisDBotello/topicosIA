@@ -1,0 +1,23 @@
+Criterio de parada
+
+    La teoría sugiere que la temperatura final sea cero.
+    En la práctica, algunas secuencias no alcanzan el cero pero se debería parar cuando la probabilidad de aceptar un movimiento a una solución
+    peor sea despreciable. Los criterios de parada habituales son.
+    * Alcanzar una temperatura final Tf es el criterio de parada más habitual. La temperatura debe ser baja(Tmin=0.01)
+    * Alcanzar un numero predeterminado de iteraciones son que la mejor solución encontrada mejore.
+    * Alcanzar un numero predeterminado de veces un porcentaje de vecinos aceptados para cada temperatura, esto es, un contrador incrementa
+    en uno cada vez que la temperatura ha sido completada con menos de un porcentaje dado de movimientos aceptados y se resetea a cero cuando
+    una solución se ha encontrado.
+
+Rococido simulado
+    Algoritmo de búsqueda por trayectorias que bajo ciertas condiciones permite la degradacion de la solución.
+    Permite escapar de óptimos locales
+    Sin memoria
+
+Algoritmo básico
+    Representación
+    Solución final
+    Mecanismo de transicion entre soluciones
+    Secuencia de enfriamiento
+    Es uno de los mejores y más populares algoritmos de optimización metaheurística en la industria y la academia
+

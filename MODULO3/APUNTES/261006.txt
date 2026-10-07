@@ -1,0 +1,50 @@
+ALGORITMOS BIOÍNSPIRADOS
+
+INTRODUCCION
+    Es necesaria la búsqueda de nuevos procesimientos para hacer frente a dicha problemática
+    Una de estas nuevas fuentes de inspiración ha sido la naturaleza ya que es capaz de proveer soluciones sencillas y eficaces.
+    Los algoritmos de optimización de optimización cuentan con una función que se encarga de comprobar lo buena que es la solución.
+    Cada uno de estas soluciones óptimas se conoce como optimo local.
+    Entre los cuales uno de ellos trendrá el mayor fitness de todas las soluciones siento el óptimo global.
+
+ESQUEMA
+    Computacion bioínspirada
+        Algoritmos evolutivos
+            Algoritmos geneticos
+            Programación genética
+            Estrategias evolutivas
+            Evolución diferencial
+        Inteligencia de enjambre
+            Enjambre de partículas
+            Busqueda de alimento en bacterias
+            Colonia de hormigas
+            Colonia de abejas
+            Luciernagas
+            Banco de peces 
+            Busqueda en grupo
+            Sistema inmune artificial
+        Ecología
+
+ALGORITMOS EVOLUTIVOS 
+    Son aquellos algoritmos dentro de la computación bioínspirada que se basan en las leyes evolución, tales como la seleccion, las mutaciones y la reproduccion
+ALGORITMO GENETICO (GA)
+    La solucion se llama cromosoma, estos son sometidos a procesos de seleccion, reproduccion y mutación.
+PROGRAMACIÓN GENETICA
+    Se diferencia en la forma de las soluciones.
+    Lo hace por un proceso en el que se obtiene variante de una posible solución, que son evaluadas directamente, y las soluciones utilizadas pueden tener
+    longitud y formas variables (al contrario de los AG, que son vectores de la misma longitud) pudiendo ser programas.
+    Por lo tanto es uno de los pocos métodos del que se pueden obtener directamente programas.
+    En la seleccion de programas se siguien unos pasos idénticos a los de los AG, utilizando un programa de fitness que mide que tan bien resuelve el
+    problema un programa, comparando la solución que da este con la óptima.
+    Después los programas con mejor fitness son utilizados en el sobrecruzamiento y la mutación para dar la siguiente generación de programas a evaluar.
+
+EVOLUCIÓN DIFERENCIAL
+    PRIMER TAREA BONUS
+        Investigar y documentar con un ejemplo, (encontrar la solucion a una función matemática) y ver si se puede resolver con evolución diferencial
+
+ESTRATEGIAS evolutivas
+    Algortimos que también partes de los principios de la seleccion natural, sin embargo están basados en 
+    La caraterística más destacada es que tienen mecanismos auto-adaptativos que permiten controlar la tasa de mutación para conseguir 
+    una optimización aún mayor de este método.
+    Esto se consigue al añadir parámetros de estrategia a cada individuo, que también pueden mutar y heredarse, al igual que el fitness de cada uno
+    Estos parámetros modifican al de mutación para este individuo
