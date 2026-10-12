@@ -1,0 +1,36 @@
+INTELIGENCIA DE ENJAMBRES
+
+    De la misma forma que los algoritmos evolutivos están basados en las leyes de la selección natural, los algoritmos de Inteligencia
+    de enjambre se basan, en sus comienzos, en el estudio del comportamiento de insectos sociales como las hormigas o las abejas, ya que 
+    tienen una alta capacidad de organización siguiendo normas muy simples.
+    Su aplcación se ha extendido a otros tipos de agrupaciones animales tales como las bandadas de pájaros, la comunicación entre 
+    luciernagas o incluso se han llegado a basar en el funcionamiento del sistema inmune.
+
+Estos algoritmos de enjambre siguen 5 principios básicos:
+    1.- Principio de proximidad: La población debe ser capaz de hacer cálculos de espacio y tiempo sencillos.
+    2.- Principio de la calidad: La población tiene que ser capaz de reconocer cambios de la calidad en el "ambiente" (es decir, en la nube
+        de soluciones en las que se está ejecutando la población).
+    3.- Principio de la respuesta diversa: La población no puede ejecutar su actividad en zonas de soluciones excesivamente pequeñas.
+    4.- Principio de la estabilidad: La población no debe cambiar su comportamiento cada vez que cambie el "ambiente".
+    5.- Principio de la adaptabilidad: La población debe cambiar su comportamiento cuando merezca la pena el esfuerzo computacional requerido.
+
+Optimización por enjambre de partículas (PSO, Particle Swarn Optimization)
+
+    Se basa en emular poblaciones con comportamientos sociales simples como los de las bandas de aves o los bancos de peces, en las que muchos
+    individuos tienen en cuenta la velocidad, direccion y la posicion de los individuos que los rodean para moverse como un conjunto.
+    En concreto, podemos pensar en un enjambre de abejas, ya que éstas a la hora de recolectar polen buscan la región del espacio en la que
+    existe más densidad de flores, porque la probabilidad de que haya polen es mayor.
+    
+    Formalmente hablando, se supone que tenemos una función desconocida, f(x1, ..., xn), que podemos evaluar en los puntos que queramos pero a
+    modo de caja negra, por lo que no podemos conocer su expresión.
+    El objetivo es el habitual en optimización, encontrar valores de x1, ..., xn para los que la función f sea mínima.
+    Como ya hemos visto en otras situaciones similares, a f se le suele llamar función de fitness, ya que va a determinar que tan buena es la 
+    posición actual para cada partícula.
+
+    Una primera aproximación para resolver este problema de calcular valores extremos de una función podría ser la selección aleatoria de valores
+    de sus variables x1, ..., xn, y almacenar el mayor de los resultados encontrados, lo que se conoce como una búsqueda aleatoria.
+
+    PSO comienza situando partículas al azar en el espacio de búsqueda, pero dándoles la posibilidad de que se muevan a través de él de acuerdo
+    a unas reglas que tienen en cuenta el conocimiento personal de cada partícula y el conocimiento global del enjambre.
+    Se proporciona capacidad simple de movimiento por este paisaje de comunicación entre ellas pueden llegar a descubrir valores particularmente 
+    altos para f gastando pocos recursos computacionales (cálculo, memoria y tiempo).
