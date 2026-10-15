@@ -8,4 +8,4 @@ principalmente de dos caracteristicas:
     Cada partícula es atraída hacia la mejor localización que ha sido encontrada por el conjunto de partícula
     La fuerza con que las partículas son empujadas en  cada una estas direcciones depende dos dos parámetros que pueden ajustarse (c1 y c2)
     A medida que las partículas se alejan de estas localizaciones mejores, la fuerza de atracción es mayor.
-    También se suele incluir un factor aleatorio que influye en cómo las partículas son empujadas hacia estas dos localizaciones
+    También se suele incluir un factor aleatorio que influye en cómo las partículas son empujadas hacia estas dos localizaciones (r1 y r2)

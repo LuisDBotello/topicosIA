@@ -1,0 +1,7 @@
+Formalmente, para la párticula i-ésima lo podemos escribir como una dependencia temporal de la siguiente forma.
+    vi(t+1) = xvi(t) + c1*r1*(pibest - pi(t))+ c2*r2*(pgbest - pi(t))
+
+Una vez actualizadas las velocidades de todas las partículas, sus posiciones se actualizan siguiente una ley simple:
+    pi(t+1) = pi(t) + vi(t)
+
+Aunque existen variacion
