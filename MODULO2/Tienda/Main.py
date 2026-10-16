@@ -37,7 +37,7 @@ def temperaturaInicial(matriz, solucion, muestras=200):
     
     return sum(peores) / len(peores) if peores else 1.0
 
-def generarSolucionInicialSimple(centro, tiendas):
+def generarSolucionInicialSimple(centro, tiendas): #puntos a como fueron leídos
     return [centro] + tiendas
 
 
