@@ -1,68 +1,56 @@
 from Tienda import Tienda
-import requests
-import json, random, math
+import random, math
 from pathlib import Path
+from openpyxl import load_workbook
+import time
 
-def crearMatrizCostos(tiendas):
+CARPETA = Path("C:/Users/luisd/Documents/Semestre 8/Topicos de IA/practicas/.venv/data")
+ARCHIVO_DATOS = CARPETA / "datos_distribucion_tiendas.xlsx"
+ARCHIVO_COSTOS = CARPETA / "matriz_costos_combustible.xlsx"  
+ARCHIVO_DISTANCIAS = CARPETA / "matriz_distancias.xlsx" 
+TIPO_CENTRO = "Centro de Distribución"
 
-    #conseguir costos
-    ruta_matriz = Path(__file__).resolve().parent / "matriz_distancias.json"
-    if ruta_matriz.exists():
-        with open(ruta_matriz, "r", encoding="utf-8") as archivo:
-            matriz = json.load(archivo)
-    else:
-        matriz = llamarAosrm(tiendas)
-        with open(ruta_matriz, "w", encoding="utf-8") as archivo:
-            json.dump(matriz, archivo, indent=4)    
-
-    #pasar de metros a km
-    for i in range(len(matriz)):
-        for j in range(len(matriz[i])):
-            if matriz[i][j] is not None:
-                matriz[i][j] /= 1000
+#datos
+def leerNodos(ruta):
     
-    return matriz
+    hoja = load_workbook(ruta, read_only=True, data_only=True).active
+    centros, tiendas = [], []
+    for id, fila in enumerate(hoja.iter_rows(min_row=2, values_only=True), start=1):
+        tipo, nombre, latitud, longitud = fila[0], fila[1], fila[2], fila[3]
+        if tipo is None:
+            continue
+        nodo = Tienda(id, nombre, f"{longitud},{latitud}")   # mismo formato lon,lat de antes
+        (centros if tipo == TIPO_CENTRO else tiendas).append(nodo)
+    return centros, tiendas
 
-def llamarAosrm(tiendas):
-    request = ""
-    for tienda in tiendas:
-        if(request == ""):
-            request = tienda.ubicacion
-        else:
-            request = request + ";" + tienda.ubicacion
+def leerMatriz(ruta):
+    hoja = load_workbook(ruta, read_only=True, data_only=True).active
+    return [list(f) for f in hoja.iter_rows(min_row=2, values_only=True)]
 
-    url = "https://router.project-osrm.org/table/v1/driving/" + request + "?annotations=distance"
+#domino del problema
 
-    #conseguir el costo entre los puntos registrados 
-    matriz = []
-    respuesta = requests.get(url, timeout=30)
-    if respuesta.status_code == 200:
-        datos = respuesta.json()
+def temperaturaInicial(matriz, solucion, muestras=200):
+  
+    base = costo(matriz, solucion)
+    deltas = [costo(matriz, generarVecinoAleatorio(solucion.copy())) - base for _ in range(muestras)]
+    peores = [d for d in deltas if d > 0]
+    
+    return sum(peores) / len(peores) if peores else 1.0
 
-        if datos["code"] == "Ok":
-            matriz = datos["distances"]
-        else:
-            print("Error de OSRM:", datos["code"])
-    else:
-        print(respuesta.text)
-
-    return matriz
-
-def generarSolucionInicialSimple(arreglo):
-    return arreglo
+def generarSolucionInicialSimple(centro, tiendas):
+    return [centro] + tiendas
 
 
 
 def swapRandom(arreglo):
-    implicados = random.randint(2, len(arreglo)-1)
-
-    inicio = random.randint(1, len(arreglo) - implicados)
+    implicados = random.randint(2, len(arreglo) - 1)
+ 
+    inicio = random.randint(1, len(arreglo) - implicados)   # nunca mueve la posición 0
     fin = inicio + implicados
-
+ 
     arreglo[inicio:fin] = arreglo[inicio:fin][::-1]
-
-    return arreglo    
-
+ 
+    return arreglo
 def generarVecinoAleatorio(solucionActual):
     solucionCandidata = swapRandom(solucionActual)
     return solucionCandidata
@@ -79,45 +67,56 @@ def costo(matriz, solucion):
 def imprimirEdo(solucion):
     estado = " -> ".join(f"{tienda.id}: {tienda.nombre}" for tienda in solucion)
     print(f"Estado actual de la solución: {estado}")
+    
+    
 #main
+centros, tiendas = leerNodos(ARCHIVO_DATOS)
+matrizCostos = leerMatriz(ARCHIVO_COSTOS)
+matrizDistancias = leerMatriz(ARCHIVO_DISTANCIAS)
 
-tiendas = list()
-tiendas.append(Tienda(1, "Soriana Barrancos",          "-107.42554676939416,24.7478797295238"))
-tiendas.append(Tienda(2, "Soriana Hiper Abastos",      "-107.37083831550379,24.771080889546653"))
-tiendas.append(Tienda(3, "Soriana La Campiña",         "-107.36491998671882,24.817470202992013"))
-tiendas.append(Tienda(4, "Soriana Zapata",             "-107.42373302359326,24.79047876680318"))
-tiendas.append(Tienda(5, "Soriana Tres Ríos",          "-107.39780712678498,24.835783370363277"))
-tiendas.append(Tienda(6, "Walmart Isla Musala",        "-107.37053648378415,24.826498737354484"))
-tiendas.append(Tienda(7, "Walmart Mexico 68",          "-107.39499917843953,24.779229226368944"))
-tiendas.append(Tienda(8, "Walmart UAdeO",              "-107.43732890925116,24.812025295138323"))
-tiendas.append(Tienda(9, "Walmart Tres Ríos",          "-107.40925294555574,24.815169842144716"))
-
-matrizCostos = crearMatrizCostos(tiendas)
-
-solucionActual = generarSolucionInicialSimple(tiendas)
-costoActual = costo(matrizCostos, solucionActual)
-
-T = 10 #un promedio es que el delta empeore la solucion inicial un 20%, por eso 10
-temperaturaFinal = 0.01
-alpha = 0.96
-
-mejor, costoMejor = solucionActual[:], costoActual
-while (T > temperaturaFinal):
-    for i in range(10):
-        solucionCandidata = generarVecinoAleatorio(solucionActual.copy())
-        costoCandidata = costo(matrizCostos, solucionCandidata)
-        delta = costoCandidata - costoActual
-
-        if delta < 0 or random.random() < math.exp(-delta / T):
-            solucionActual, costoActual = solucionCandidata, costoCandidata
-            if costoActual < costoMejor:
-                mejor, costoMejor = solucionActual[:], costoActual
-    print(costo(matrizCostos, solucionActual))
-    T *= alpha
-
-for i in mejor:
-    print(i.nombre)
-print("Costo")
-print(costoMejor)
+def recocidoSimulado(matriz, centro, tiendas, alpha=0.95, iteraciones=None):
+    solucionActual = generarSolucionInicialSimple(centro, tiendas)
+    costoActual = costo(matriz, solucionActual)
+ 
+    T = temperaturaInicial(matriz, solucionActual)
+    temperaturaFinal = T * 0.001
+    if iteraciones is None:
+        iteraciones = 1000                         # iteraciones por cada temperatura
+ 
+    mejor, costoMejor = solucionActual[:], costoActual
+    while T > temperaturaFinal:
+        for _ in range(iteraciones):
+            solucionCandidata = generarVecinoAleatorio(solucionActual.copy())
+            costoCandidata = costo(matriz, solucionCandidata)
+            delta = costoCandidata - costoActual
+ 
+            if delta < 0 or random.random() < math.exp(-delta / T):
+                solucionActual, costoActual = solucionCandidata, costoCandidata
+                if costoActual < costoMejor:
+                    mejor, costoMejor = solucionActual[:], costoActual
+        T *= alpha
+ 
+    return mejor, costoMejor
 
 
+def imprimirRuta(solucion):
+    ruta = " -> ".join(f"{t.id}: {t.nombre}" for t in solucion)
+    print(f"{ruta} -> {solucion[0].id}: {solucion[0].nombre}")
+
+print(f"{len(centros)} centros de distribución, {len(tiendas)} tiendas\n")
+ 
+resultados = []
+for centro in centros:
+    inicio = time.time()
+    mejor, costoMejor = recocidoSimulado(matrizCostos, centro, tiendas)
+    km = costo(matrizDistancias, mejor)
+    resultados.append((centro, mejor, costoMejor, km))
+ 
+    print("\n")
+    print(f"{centro.nombre}  |  costo combustible: {costoMejor:.2f}  |  {km:.2f} km  |  {time.time() - inicio:.1f} s")
+    imprimirRuta(mejor)
+ 
+print("\n")
+print("RESUMEN")
+for centro, mejor, costoMejor, km in sorted(resultados, key=lambda r: r[2]):
+    print(f"{centro.nombre:<28} costo: {costoMejor:9.2f}   km: {km:9.2f}")
