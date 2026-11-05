@@ -4,7 +4,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 import time
 
-CARPETA = Path("C:/Users/luisd/Documents/Semestre 8/Topicos de IA/practicas/.venv/data")
+CARPETA = Path("C:/Users/luisd/Documents/8vo Semestre/Topicos de IA/.venv/data")
 ARCHIVO_DATOS = CARPETA / "datos_distribucion_tiendas.xlsx"
 ARCHIVO_COSTOS = CARPETA / "matriz_costos_combustible.xlsx"  
 ARCHIVO_DISTANCIAS = CARPETA / "matriz_distancias.xlsx" 
@@ -81,7 +81,7 @@ def recocidoSimulado(matriz, centro, tiendas, alpha=0.95, iteraciones=None):
     T = temperaturaInicial(matriz, solucionActual)
     temperaturaFinal = T * 0.001
     if iteraciones is None:
-        iteraciones = 1000                         # iteraciones por cada temperatura
+        iteraciones = 750                         # iteraciones por cada temperatura
  
     mejor, costoMejor = solucionActual[:], costoActual
     while T > temperaturaFinal:

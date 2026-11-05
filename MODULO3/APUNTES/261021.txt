@@ -1,0 +1,5 @@
+vistazo a implementación de PSO en R
+
+Recomendaciones: 
+Para C1 = 2
+Para C2 = 2

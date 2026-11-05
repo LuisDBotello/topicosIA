@@ -1,0 +1,22 @@
+Conceptos básicos
+
+En la optimización de un solo objetivo, es posivle determinar si una solución, es mejor que la otra comparando sus valores de la función objetivo.
+Por lo tanto una sola solución es obtenida (el óptimo global).
+En los MOPs, la meta es encontrar un conjunto de soluciones optimas que representen el mejor compromiso entre los objetivos.
+
+La dominancia de Pareto es un concepto en economía y teoría de juegos que describe una situación en la que un resultado se considera superior a otro si al menos una de las partes se beneficia y ninguna se perjudica.
+Este concepto ayuda a evaluar diferentes equilibrios al indicar qué resultados.
+
+Para que una solución domine a otra, esta debe ser estrictamente mejor en al menos una función objetivo y no peor en ninguna de las demás.
+
+Optimización de Pareto
+
+Dada una asignación inicial de bienes entre un grupo de individuos, un cambio hacia una nueva asignación que al menos mejora la situación de un individuo sin hacer que empeore la situación de los demás se denomina mejora de Pareto.
+Una asignación se define como "pareto-eficiente" o "pareto-óptima" cuando no pueden lograrse nuevas mejoras de Pareto.
+
+Sea P un problema de optimización multiobjetivo.
+Se dice entonces que una solucion S1 es Pareto-Optima cuando no existe otra solución S2 tal que mejore en un objetivo sin empeorar al menos uno de los otros.
+
+La definicion así establecida, no produce una solucion única sino un conjunto de soluciones que la satisfagan.
+A cada una de las soluciones que satisfacen la definicion optimo de Pareto, se les llaman soluciones no inferiores o no dominadas. Al conjunto de dichas soluciones se les denomina Conjunto de óptimos de Pareto (POS).
+
