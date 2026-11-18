@@ -14,4 +14,11 @@ Funcion de activación, analiza la sumatoria y analiza si el umbral es rebasado 
 Manda la salida resultante.
 
 ¿Cómo aprende las tareas de clasificación?
-Hace pequeños ajustes en los pesos para reducir la diferencia entre lo actual y la salida deseanda del perceptrón.
+* Hace pequeños ajustes en los pesos para reducir la diferencia entre lo actual y la salida deseanda del perceptrón.
+* Se definen valores iniciales en el rango de -0.5 y 0.5
+* Las actualizaciones se llevan a cabo mediante iteraciones en el algoritmo de entrenamiento
+* Por ejemplo: en la iteracion p
+* Si el error es positivo se necesita incrmentar la salida, si es negativo pues decrementar la salida
+    e(p) = Yd(p) - Y(p) donde p = 1,2,3,...
+* Por lo tanto, se define una regla de aprendizaje
+    wi(p+1) = wi(p) + alpha*xi(p) * e(p)
