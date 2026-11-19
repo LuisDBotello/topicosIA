@@ -1,0 +1,32 @@
+Tarea: Traer modelo de ML que aprenda la compuerta XOR.
+Diseño de arquitectura, métricas y pruebas
+
+Underfitting y Overfitting
+Entrenamiento y validación
+
+El entrenamiento consiste en presentar a la red una gran cantidad de ejemplos de manera tal que esta pueda "aprender"
+las caracteristicas más relevantes del set de datos de entrada.
+Este aprendizaje consiste en determinar una serie de coeficientes que permiten encontrar la mejor representación posible que
+relacione los datos de entrada con los de salida.
+
+La validación consiste en poner a prueba el modelo entrenado. En este caso debemos verificar que también funciona dicho modelo
+con datos que no ha visto previamente.
+
+El set de entrenamiento generalmente contiene aproximadamente el 70% y el 80% de los datos disponibles.
+
+Tres posibles modelos de clasificacion
+    Un modelo demasiado generalmente
+        Tenemos dos categorías "Frutas" y "No frutas".
+
+Un modelo con Underfitting es aquel donde los errores tanto de entrenamiento como de validación son similares y relativamente 
+altos
+Un modelo con Overfitting se obtiene un error de entrenamiento relativamente bajo y uno de validación relativamente alto.
+Al desarrollar un modelo de Machine Learning se debe evitar cualquiera de los dos extremos anteriores (under u over).
+Sub-ajuste: una línea recta que intenta ajustarse a un conjunto de datos curvos pero no puede capturar los patrones de los
+datos.
+
+4.5 Herramientas y lenguajes de desarrollo
+
+Python
+Facilidad de uso: Python es conocido por su sintaxis sencilla y legibilidad, lo que facilita el aprendizaje y la implementacion
+de proyectos complejos.
