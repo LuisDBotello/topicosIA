@@ -81,7 +81,7 @@ def recocidoSimulado(matriz, centro, tiendas, alpha=0.95, iteraciones=None):
     T = temperaturaInicial(matriz, solucionActual)
     temperaturaFinal = T * 0.001
     if iteraciones is None:
-        iteraciones = 1000                         # iteraciones por cada temperatura
+        iteraciones = 1500                         # iteraciones por cada temperatura
  
     mejor, costoMejor = solucionActual[:], costoActual
     while T > temperaturaFinal:
@@ -118,5 +118,9 @@ for centro in centros:
  
 print("\n")
 print("RESUMEN")
+kmSuma = 0
 for centro, mejor, costoMejor, km in sorted(resultados, key=lambda r: r[2]):
     print(f"{centro.nombre:<28} costo: {costoMejor:9.2f}   km: {km:9.2f}")
+    kmSuma += km
+    
+print(f"Total KM = {kmSuma:9.2f}")
