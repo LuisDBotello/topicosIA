@@ -1,0 +1,29 @@
+LA forma más general de obtener el frente de Pareto de un MOP dado es por enumeración de cada una de las soluciones 
+factibles del mismo. Tiene un alto costo computacional por la extensión del conjunto optimo de pareto.
+
+Metodos para resolver MOPS - Metodos populares matematicos
+    Metodos a priori
+        Goal Programming, lexicographic method.
+    Metodos a posteriori
+        Weighing Method, epsilon Constraint Method
+    Articulacion progresiva de preferencias
+        Tchebycheff Method, GUESS Method
+
+Ventajas de los MOEA
+    Requieren poco conocimiento especifico del problema
+    No son sensibles a la forma y continuidad del frente de Pareto
+    Fáciles de implementar y usar.
+    Generan varios elementos del POS en una sola ejecución
+
+Uso de de los AEs
+    Los AE de un solo objetivo y los MOEAs comparten la misma estructura.
+    Dado que los MOEAs deben lidiar con mas de un objetivo al mismo tiempo.
+    Estos deben usar mecanismos de asignación de aptitud que considere las dos metas de la optimizacion multi-objetivo.
+    Los MOEAs pueden ser clasificados de diversas maneras, una de las más sencilla es de acuerdo a su mecanismmo de 
+    selección:
+    1.- Algoritmos que no incorporan el concepto de optimo de Pareto en el mecanismos de seleccion del algoritmo 
+    evolutivo (p.ej. basados en descomposicion (funciones agregativas), basados en indicadores).
+    2.- Algoritmos basados en Pareto
+
+Conclusiones
+    Otra tendencia es el uso de otros algoritmos bio-inspirados (PSO, Sistema inmune artificial)

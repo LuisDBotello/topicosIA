@@ -1,0 +1,34 @@
+Optimización evolutiva multi objetivo
+
+Estas funciones forman una descripcion matematica de los criterios de desempeño que suelen estar en conflicto unos con otros.
+El termino "optimizar" en este caso toma pues un significado diferente al del caso de problemas mono-objetivo-
+
+Definicion formal
+
+El MOP general se define formalmente de la siguiente manera:
+Encontrar el vector ^X = [[x1x2...xn]]^T que satisfaga las m restricciones de desigualdad:
+    gi(x->) <= 0   i=1,2,...,manera
+    las p restricciones de igualdad: hj(x->)=0   j = 1,2,...,problemas
+    y optimice la función: f->(x->) [f1(x->), f2(x->), ... , fk(x->)]^T 
+
+Tipos de problema multi objetivo
+hay tres timpos de situaciones que pueden presentarse en un problema multi-objetivo:
+    * Minimizar todas las funciones objetivo.
+    * Maximizar todas las funciones objetivo.
+    * Minimizar algunas funciones y maximizar otras.
+
+Qué se entiende por óptimo?
+
+Al tener varias funciones objetivo, la noción de optimo cambia, porque en los MOPs, realmente estamos tratando de obtener buenos compromisos
+(trade-offs) entre los objetivos, en vez de una solución única como en optimización mono-objetivo.
+La noción de óptimo más comunmente adoptada es aquella propuesta originalmente por Francis Ysidro Edgeworth(1886)
+Esta noción fue luego generalizada por Vilfredo Pareto en 1896
+
+Conceptos básicos
+
+    Espacio de las variables de decisión: El espacio de las variables de decisión es el espacio n-dimensional de las variables, en el cual cada
+    eje de coordenadas corresponde a un componente del vector Xbarra.
+    Funciones objetivo: Las funciones objetivo evalúan que tan bueno es una solución dada. En los MOPs, más de una función objetivo deben ser resueltas
+    y están denotadas por un vector objetivo: f->(x->) [f1(x->), f2(x->), ... , fk(x->)]^T
+    Espacio de las funciones objetivo: El espacio de las funciones objetivo es el espacio k-dimensional de las funciones obketivo, en el que cada eje
+    de coordenadas corresponde a un componente del vector.

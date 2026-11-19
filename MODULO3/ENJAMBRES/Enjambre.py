@@ -95,7 +95,3 @@ class Enjambre(Observador):
     def __str__(self):
         return "\n".join(str(particula.id) for particula in self.particulas)
 
-    def __ponerRandom(self, particula, limX, limY):
-        particula.x = random.uniform(-limX, limX)
-        particula.y = random.uniform(-limY, limY)
-        particula.notify()

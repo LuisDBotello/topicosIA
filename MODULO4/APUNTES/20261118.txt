@@ -1,0 +1,22 @@
+4.4 Algoritmo de aprendizaje: Backpropagation
+
+Step 1: Inicializacion
+    Poner pesos iniciales w1, w2, w3, ..., wn y umbral tetha a numeros randoms en el rando de -0.5 a 0.5
+
+Step 2: Activacion
+    Activar el perceptrón aplicando entradas x1(p), x2(p), ..., xn(p) y salida deseada Yd(p). Calcular la 
+    salida a la iteracion p=1
+
+    Y(p) = step [sumatoria(i=1, n, xi(p)wi(p) - tetha)]
+    donde n es el numero de entradas al perceptrón, y step es una funcion de activacion de tipo paso
+
+Step 3: Entrenamiento de pesos
+    Actualizar los pesos del perceptrón
+        wi(p+1) = wi(p) + delta*wi(p)
+    donde delta*wi(p) es la correccion de peso en la iteracion p.
+        La correccion de pesos es procesada por la regla delta:
+            delta*w1(p) = alpha*xi(p) * e(p)                            delta = learning rate 
+
+Step 4: iteracion
+    Incrementar iteracion p en uno, regresar al paso 2 y repetir el proceso hasta la converger.
+

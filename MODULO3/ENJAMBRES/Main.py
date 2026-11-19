@@ -6,7 +6,7 @@ plt.ion()
 
 
 def funcion_objetivo(x, y):
-    return 100 - (x - 3)**2 - (y - 2)**2
+    return 100 - (x+5)**2 - (y-7)**2
 
 enjambre = Enjambre(50, funcion_objetivo,  1.5, 1.5, 0.6, limX = 100, limY = 100, )
 
